@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kodland Translation Guides</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Sans+3:wght@700;900&display=swap">
+<style>
+:root{--bg:#151823;--card:#1f232f;--line:#2e3342;--tx:#f3f4f8;--mut:#9a9fb4;--acc:#7550d8;--code:#12141d;--chip:#2a2f3f;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:light){:root:not([data-theme=dark]){--bg:#f5f4fb;--card:#fff;--line:#dcd9ea;--tx:#1a1830;--mut:#5d5a78;--code:#eeecf8;--chip:#e9e6f6;color-scheme:light}}
+:root[data-theme=dark]{--bg:#151823;--card:#1f232f;--line:#2e3342;--tx:#f3f4f8;--mut:#9a9fb4;--code:#12141d;--chip:#2a2f3f}
+*{box-sizing:border-box}html{scroll-padding-top:16px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg) radial-gradient(ellipse at 50% 100%,rgba(117,80,216,.22),transparent 60%) no-repeat fixed;color:var(--tx);font:16px/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:"Source Sans 3",Inter,sans-serif;font-weight:900;margin:0;line-height:1.05}
+.top{padding:20px 24px;font-size:12px;letter-spacing:.18em;font-weight:600;color:var(--mut)}
+.hero{text-align:center;padding:56px 20px 40px}
+.hero h1{font-size:clamp(46px,10vw,104px);text-transform:uppercase}
+.hero p{color:var(--mut);font-size:20px;margin:18px auto 30px;max-width:30ch}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.b{font:600 17px Inter,sans-serif;color:var(--tx);background:transparent;border:1px solid var(--line);border-radius:18px;padding:18px 30px;cursor:pointer}
+.b.on{background:var(--acc);border-color:var(--acc);color:#fff;box-shadow:0 8px 30px rgba(117,80,216,.45)}
+.b:focus-visible,.cp:focus-visible,.ch:focus-visible,li.ck:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+main{max-width:920px;margin:0 auto;padding:20px 20px 80px}
+.pick{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+.ch{font:500 14px Inter,sans-serif;color:var(--mut);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 16px;cursor:pointer}
+.ch.on{border-color:var(--acc);color:var(--tx);background:var(--chip)}
+.sub{color:var(--mut);margin:8px 0 22px;max-width:70ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px;margin-bottom:16px}
+.card.hi{border-color:var(--acc)}
+.h{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+.n{background:var(--chip);border-radius:9px;min-width:34px;height:34px;display:grid;place-items:center;font-weight:600;font-size:15px}
+h3{font-size:24px}h2{font-size:38px}
+kbd{font:600 .88em Inter,sans-serif;background:var(--chip);border:1px solid var(--line);border-radius:7px;padding:1px 8px;white-space:nowrap}
+.bd{color:var(--mut)}.bd b{color:var(--tx)}.bd p{margin:0 0 10px}.bd ul{margin:6px 0 10px;padding-left:20px}
+.pr{background:var(--code);border:1px solid var(--line);border-radius:16px;margin-top:14px;overflow:hidden}
+.ph{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;font-size:14px;font-weight:600;border-bottom:1px solid var(--line)}
+.cp{font:600 14px Inter,sans-serif;background:var(--chip);color:var(--tx);border:1px solid var(--line);border-radius:10px;padding:6px 14px;cursor:pointer}
+.cp.ok{background:var(--acc);border-color:var(--acc);color:#fff}
+pre{margin:0;padding:14px;max-height:230px;overflow:auto;white-space:pre-wrap;font:13px/1.55 ui-monospace,Menlo,Consolas,monospace;color:var(--tx)}
+.bar{height:8px;border-radius:8px;background:var(--chip);overflow:hidden;margin:6px 0 14px}.bar i{display:block;height:100%;background:var(--acc);width:0;transition:width .3s}
+ul.cl{list-style:none;padding:0;margin:0}
+li.ck{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:12px;cursor:pointer;color:var(--mut)}
+li.ck:hover{background:var(--chip)}
+li.ck s{flex:none;width:22px;height:22px;border:2px solid var(--line);border-radius:7px;margin-top:2px;display:grid;place-items:center;text-decoration:none;font-size:14px;color:#fff}
+li.ck.d{color:var(--tx)}li.ck.d s{background:var(--acc);border-color:var(--acc)}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:14px}table{border-collapse:collapse;width:100%;font-size:14px}th{text-align:left;padding:10px 14px;background:var(--chip);color:var(--tx);font-weight:600;white-space:nowrap}td{padding:10px 14px;border-top:1px solid var(--line);vertical-align:top;color:var(--mut)}td:first-child{white-space:nowrap}td:last-child{min-width:260px}
+.imp{background:var(--chip);border:1px solid var(--acc);border-radius:14px;padding:12px 16px;color:var(--tx);margin:16px 0}
+.warn{border-left:3px solid var(--acc);padding-left:14px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+@media(max-width:560px){.card{padding:20px;border-radius:20px}.b{width:100%}}
+</style></head><body>
+<div class="top">KODLAND SPARKS</div>
+<header class="hero"><h1>Translation<br>Guides</h1><p>Translate and proofread a Kodland training with Claude</p>
+<div class="btns"><button class="b on" id="bpl">Guia traducción PL</button><button class="b" id="bem">Guia traducción EM</button></div></header>
+<main id="guide"></main>
+<script>
+const T=s=>s.replace(/~/g,"`");
+const Q=`Inside the texts, never use straight quotes or apostrophes (~'~ ~"~). Use typographic ones instead (~’~, ~« »~ or ~„ ”~).`;
+const KEEP="Kodland, Kodland Sparks, Backoffice, BO, Classroom, AI Buddy, and the labels in capitals (CORE, SUBMIT, SELF-CHECK…)";
+const BTN="For platform buttons (Assignments, Lead the group, Work independently, Send…), use the name the Kodland platform shows in [TARGET LANGUAGE]. If you are not sure, keep the English name.";
+const OUT="Output: return the complete file as a downloadable file named ~content-[CODE].js~.";
+const GUIDE=`- Translate into [TARGET LANGUAGE] all the English texts in ~CONTENT.ui~, ~CONTENT.welcome~, ~CONTENT.guide~ (~title~, ~text~, ~btn~) and ~CONTENT.finish~. Produce a natural, clear adaptation, not a word-for-word translation.`;
+const NOCH=`- Do not change key names, anything inside ~\${…}~, HTML tags and attributes, emojis, file names, links, or the values of ~target~, ~accept~, ~read~, ~side~, ~wide~, ~next~ and ~last~.`;
+const P={
+pl1:`Translate the attached ~en.js~ file from English into [TARGET LANGUAGE]. It contains the texts of a training for Kodland tutors about a new lesson format, Parallel Lessons.
+
+Translation guidelines:
+- Understand the meaning and purpose of each text before translating it. Produce a natural, clear adaptation, not a word-for-word translation.
+- Use appropriate educational terminology. Instructions must be easy for tutors to understand.
+- Keep these terms in English: Kodland, BO, BackOffice.
+
+Technical rules (very important, or the file will not work):
+- Translate ONLY the text inside quotes. Do not change key names (~title:~, ~desc:~…), the order of lists, or the order of options.
+- Change ~lang: "en"~ to ~lang: "[CODE]"~.
+- Do not change anything inside {curly braces} (for example {n}, {total}, {LADDER}, {ANNA}, {VIDEO}).
+- Do not change HTML tags, emojis, numbers after ~a:~, times, codes or video links.
+- In ~rules.items~, keep the words ~"yes"~ and ~"no"~ in English.
+- ${Q}
+
+Output: return the complete file, ready to save as ~[CODE].js~.`,
+pl2:`Translate the attached ~en.js~ file from English into [TARGET LANGUAGE]. It contains the texts of an interactive Classroom Simulator for Kodland tutors.
+
+Translation guidelines:
+- Understand the meaning and context of each text before translating it. Produce a natural, clear adaptation, not a literal translation.
+- The ~lesson~ section (lesson cards and Teacher notes): do NOT translate it yourself. Copy the official text from the attached .txt file, card by card, in the same places, including the card titles.
+- Translate all the other texts: instructions, messages, buttons, decisions and options.
+- The ~say~ texts are lines the tutor says aloud and they will be recorded as audio. They must sound natural when spoken.
+- Keep these terms in English: Kodland, BO, BackOffice.
+
+Technical rules (very important, or the file will not work):
+- Translate ONLY the text inside quotes and backticks. Do not change key names, or the order of lists, steps, decisions and options.
+- Change ~lang: "en"~ to ~lang: "[CODE]"~.
+- Do not change anything inside {curly braces} or ~\${…}~, the ~h.xxx(...)~ calls, HTML tags and attributes (~class="…"~, ~id="…"~), emojis, times or file names.
+- ${Q}
+
+Output: return the complete file, ready to save as ~[CODE].js~.`,
+pl3:`The attached file contains the texts of the BO Simulator, already translated into [TARGET LANGUAGE]. Only the 8 keys that start with ~done~ are still in English. They are under the comment that contains the word ~TRANSLATE~.
+
+- Translate ONLY those 8 texts into [TARGET LANGUAGE], so they are natural and consistent with the rest of the file.
+- Keep ~<b>~ tags and emojis. Keep these terms in English: Kodland, BO, BackOffice.
+- Do not change anything else in the file.
+- Remove the ~TRANSLATE~ comment.
+- ${Q}
+
+Output: return the complete file, ready to save with the same name.`,
+em1:`Translate the attached ~content-en.js~ file from English into [TARGET LANGUAGE]. It contains all the texts of a training for Kodland tutors about the New Educational Model (EM): how the new lessons work, the platforms and the quality of the lessons.
+
+Translation guidelines:
+- Understand the meaning and purpose of each text before translating it. Produce a natural, clear adaptation, not a word-for-word translation.
+- Use appropriate educational terminology. Instructions must be easy for tutors to understand.
+- Keep these terms in English: ${KEEP}. ${BTN}
+
+Technical rules (very important, or the file will not work):
+- Translate ONLY the text inside quotes ~'…'~ and backtick strings. Do not change key names, or the order of lists, questions and options.
+- Change the first line to ~window.CONTENT = { lang: '[CODE]' };~ (for Arabic: ~window.CONTENT = { lang: 'ar', dir: 'rtl' };~).
+- Do not change anything inside {curly braces} or ~\${…}~, including the function names (~callout~, ~flip~, ~launch~, ~codeBox~, ~zclip~, ~stc~, ~videoBtn~) and ~CONFIG.…~.
+- Do not change HTML tags and attributes, emojis, file names, links, the numbers after ~a:~, or the values of ~id~, ~check~, ~color~, ~v~, ~open~ and ~min~.
+- In the list of questions about thinking (each item looks like ~['🙋', '“…”', 'yes', '…']~), keep the words ~'yes'~ and ~'no'~ in English: they are answer keys.
+- ${Q}
+
+${OUT}`,
+em2:`Translate the attached ~content-en.js~ file from English into [TARGET LANGUAGE]. It contains the texts of a simulation of Backoffice (BO), the Kodland platform where tutors find their courses, lessons and Teacher Notes.
+
+Translation guidelines:
+- Produce a natural, clear adaptation, not a word-for-word translation. Instructions must be easy for tutors to understand.
+- Keep these terms in English: Kodland, Backoffice, BO. For menus and buttons of Backoffice (Groups, Courses, Assignments, Schedule…), use the name Backoffice shows in [TARGET LANGUAGE]. If you are not sure, keep the English name.
+- Keep the example data as it is: course names, group names, IDs, dates and times.
+
+Technical rules (very important, or the file will not work):
+- Translate ONLY the text inside quotes and backticks. Do not change key names or the order of the steps.
+- Change the first line to ~window.CONTENT = { lang: '[CODE]' };~.
+- Do not change anything inside {curly braces} (for example {n}, {total}, {label}), HTML tags, emojis or links.
+- ${Q}
+
+${OUT}`,
+emG:`The attached file contains the texts of a Classroom guide for Kodland tutors. The guide texts are in English, and the lesson cards (~CONTENT.activities~) are already in [TARGET LANGUAGE].
+
+${GUIDE}
+- Do NOT change ~CONTENT.activities~ (the lesson cards): they are already in [TARGET LANGUAGE].
+- Keep these terms in English: Kodland, Classroom. ${BTN}
+- Change ~lang:~ in the first line to ~'[CODE]'~. Do not change ~CONTENT.media~, ~CONTENT.video~ or ~CONTENT.dir~.
+${NOCH}
+- ${Q}
+
+${OUT}`,
+emL:i=>`I’m attaching two files:
+1) A content file of a Classroom guide for Kodland tutors (~content-en.js~ or ~content-pt.js~).
+2) A ~.txt~ file with the same lesson, already translated into [TARGET LANGUAGE].
+
+Create the complete file ~content-[CODE].js~. Follow these rules exactly:
+
+- Guide texts: translate into [TARGET LANGUAGE] all the English texts in ~CONTENT.ui~, ~CONTENT.welcome~, ~CONTENT.guide~ (~title~, ~text~, ~btn~) and ~CONTENT.finish~. Produce a natural, clear adaptation. Keep these terms in English: Kodland, Classroom. ${BTN} Set ~ui.platformLang~ to the language code in capitals (for example ~'IT ˅'~).
+- Lesson cards (~CONTENT.activities~): do NOT translate them yourself. Replace each card with the text of the ~.txt~ file, card by card, copying it as it is. The card title is the first line of each card. Keep the same cards in the same order, and the same structure and helpers (~tnotes~, ~spoiler~, ~media~, ~test~, ~choice~, ~essay~, ~fileAnswer~, ~gallery~, ~note~, ~linkBtn~, ~video~…). Keep ~'tn-first'~ on the first card’s Teacher notes. If a card in the ~.txt~ has more or fewer sections, adapt that card with the same helpers, but don’t change the number or the order of the cards.
+${i?`- Images: the ~.txt~ has links like ~https://mp.kodland.org/task_description_materials/NAME.png~. ~C('NAME.png')~ = illustrations shared by all languages: keep them exactly as they are. ~M('NAME.png')~ and ~gallery(['NAME.png', …])~ = screenshots that change per language: use the NAME from the ~.txt~, in the same position. Set ~CONTENT.media = '[IMAGE FOLDER]';~. For Arabic, also set ~CONTENT.dir = 'rtl';~.\n`:""}- Change ~lang:~ in the first line to ~'[CODE]'~.
+- Do not change anything else: key names, anything inside ~\${…}~, HTML tags and attributes, emojis, links, or the values of ~target~, ~accept~, ~read~, ~side~, ~wide~, ~next~ and ~last~.
+- ${Q} Or put the text between backticks. Make sure the file is valid JavaScript.
+
+Output: return the complete file as a downloadable file named ~content-[CODE].js~. Don’t shorten it or skip any part.`,
+emI:`I’m attaching two files:
+1) ~content-pt.js~: the content file of a Classroom guide for Kodland tutors (guide texts in English, lesson cards in Portuguese).
+2) A ~.txt~ file with the same lesson in Italian.
+
+Create the complete file ~content-id.js~ in Indonesian. Follow these rules exactly:
+
+- Guide texts: translate into Indonesian all the English texts in ~CONTENT.ui~, ~CONTENT.welcome~, ~CONTENT.guide~ (~title~, ~text~, ~btn~) and ~CONTENT.finish~. Set ~ui.platformLang~ to ~'ID ˅'~.
+- Lesson cards (~CONTENT.activities~): replace each card with the lesson of the Italian ~.txt~, translated into Indonesian, card by card. This lesson is for children aged 8–9: use simple, friendly language for the student texts, and clear instructions for the Teacher notes. Keep the names of the story and the game (Spark, Craftforge, Minecraft…) and the names of the launcher buttons as they appear in the launcher. Keep the same cards in the same order, and the same structure and helpers. Keep ~'tn-first'~ on the first card’s Teacher notes.
+- Images: keep every ~C('NAME.png')~ as it is. For ~M('NAME.png')~ and ~gallery([...])~, use the NAME from the Italian ~.txt~, and set ~CONTENT.media = 'Media_Minecraft_ITA/';~.
+- Change ~lang:~ in the first line to ~'id'~.
+- Do not change key names, anything inside ~\${…}~, HTML tags and attributes, emojis, links, or the values of ~target~, ~accept~, ~read~, ~side~, ~wide~, ~next~ and ~last~.
+- ${Q} Or put the text between backticks. Make sure the file is valid JavaScript.
+
+Output: return the complete file as a downloadable file named ~content-id.js~. Don’t shorten it or skip any part.`,
+emS:`Translate the attached ~content-en.js~ file from English into [TARGET LANGUAGE]. It contains the texts of a guided tour of Kodland Sparks, the platform where students build and publish their projects. The file has the guide texts and a copy of the platform’s screens.
+
+Translation guidelines:
+- Produce a natural, clear adaptation, not a word-for-word translation. Instructions must be easy for tutors to understand.
+- Keep these terms in English: Kodland, Kodland Sparks, Studio. For menus and buttons of the platform (Feed, My projects, Publish project…), use the name Kodland Sparks shows in [TARGET LANGUAGE]. If you are not sure, keep the English name.
+- Keep user names, character names (Mia Torres, Alex Tutor, Spark Aiko, Inimitable Robby…) and project types (HTML, Python, PNG…) as they are.
+- In the Python example code, translate only the comments and the texts between quotes, never the code.
+
+Technical rules (very important, or the file will not work):
+- Translate ONLY the text inside quotes and backticks. Do not change key names, or the order of ~CONTENT.cards~ and ~CONTENT.steps~ (the 44 steps must stay in the same order).
+- Change the first line to ~window.CONTENT = { lang: '[CODE]' };~.
+- Keep functions as they are, for example ~(n, total) => \`…\${n}…\`~: translate only the words around ~\${…}~.
+- Do not change anything inside {curly braces} or ~\${…}~, HTML tags, emojis or links.
+- ${Q}
+
+${OUT}`,
+fix:`This JavaScript file doesn’t load. Find and fix the syntax error without changing any text. Return the complete file.`,
+cor:`Apply only these corrections. Keep all other texts and the code exactly as they are. Never use straight quotes or apostrophes inside the texts. Return the complete file.`};
+
+const PL={it:"Italian",pl:"Polish"};
+const EM={es:["Spanish","classroom-guide","First_lesson_ESP.txt"],tr:["Turkish","classroom-guide-math"],pt:["Portuguese (Brazil)","classroom-guide-Minecraft"],it:["Italian","classroom-guide-Minecraft","First_lesson_ITA_Minecraft_8-9.txt","Media_Minecraft_ITA/"],pl:["Polish","classroom-guide-Minecraft","First_lesson_POL_Minecraft_8-9.txt","Media_Minecraft_POL/"],ru:["Russian","classroom-guide-Minecraft","First_lesson_RU_Minecraft_8-9.txt","Media_Minecraft_RU/"],ar:["Arabic","classroom-guide-Minecraft","First_lesson_AR_Minecraft_8-9.txt","Media_Minecraft_AR/"],id:["Indonesian","classroom-guide-Minecraft","First_lesson_ITA_Minecraft_8-9.txt"]};
+const k=x=>`<kbd>${x}</kbd>`;
+const AUD=[["Audio of the tutor (adult female voice)",[["Tutor_D1_A.mp3","Alexander, can you click “Lead the group”?"],["Tutor_D1_C.mp3","Alexander, can you read the activity?"],["Tutor_D2_A.mp3","I have to go because I need to welcome other students, so from now on you’ll work alone. See you at the end of the lesson."],["Tutor_D2_B.mp3","Great, it’s time for your independent work! I trust you’ll do really well, I believe in your skills. Remember that the cards have help for every activity, and you can also raise your hand and I’ll come back to your room to help you. Good luck and have fun!"],["Tutor_D2_C.mp3","I’m leaving for a short moment, but I’ll be right back to help you and explain the rest of the activities. I’ll also share my screen to show you how to use the program."],["Tutor_D4_C.mp3","Mateo, wait a moment, a classmate has just joined the lesson."],["Tutor_D6_A_v2.mp3","Sofia, this is amazing, truly amazing! Honestly, it’s one of the most beautiful drawings I’ve seen. You’re a real artist and you should be very proud of yourself. Keep doing what you love, when you enjoy what you do, that’s what really matters, and everything else will come."],["Tutor_D6_B_v2.mp3","Wow, Sofia, you made this all by yourself! Your shapes and colours work really well, and all those frames make the movement smooth. What would you like to add next?"],["Tutor_D6_C_v2.mp3","Sofia, let me explain something important. Frame-by-frame animation is based on the persistence of vision: each frame is shown for a fraction of a second and the brain reads the sequence as continuous motion. In your case, the theme doesn’t follow the lesson objective, which was to animate the letters of your name, so the next step would be to start again following the instructions."],["Tutor_D8_A_v2.mp3","I see — but hey, you had a lot of fun! Learning is all about fun: making great moments out of the lesson, feeling comfortable with your own progress and spending time doing the things you love. The result doesn’t matter that much, believe me."],["Tutor_D8_B.mp3","It’s great that you already know some of this — that gives you an advantage. It’s the first lesson, so it’s normal for it to feel easy. Tell me what kind of challenges you’d like to see or learn, and I’ll keep them in mind as extra activities for the next lesson."],["Tutor_D8_C_v2.mp3","That’s actually a very common phenomenon, Alexander. When learners have prior experience, the perceived difficulty decreases, but consolidation still takes place. Repetition reinforces what you already know, so even if it felt easy, the practice was valuable for your long-term learning."],["Tutor_D10_A.mp3","Valentina, this is a very complex problem — it’s better if we fix it once I’ve finished saying goodbye to Mateo."],["Tutor_D10_B.mp3","You just need to close the letter V — there’s a small gap, and that’s why everything gets painted."],["Tutor_D10_C.mp3","Look in the cards for help — I don’t have time to explain right now."]]],["Audio of the boy, Alexander (voice of about 12 years old)",[["Alexander_1_wrong.mp3","Hmm… I don’t understand, I don’t see that option."],["Alexander_2_wrong.mp3","Yes, I can see your camera."],["Alexander_reflection.mp3","Hmm… It was pretty easy for me because I had used these tools before. I did everything by myself, but I didn’t really learn anything new because I already knew how to use them."]]],["Audio of the girl, Valentina (voice of 10–12 years old)",[["Valentina_wrong.mp3","The thing is, when I use the paint bucket, everything gets painted! And I just want the letter V to be painted."],["Valentina_corrected.mp3","Thank you, that was really easy."]]]];
+function audioTable(){const c=S.l[S.g];return `<div class="bd"><p style="margin:18px 0 0"><b>3. Generate and name the files.</b> The texts below are the English reference. Record the ${PL[c]} version, using the texts from the Classroom options of your ${k(c+".js")}, and name each file exactly as shown.</p>`+AUD.map(g=>`<p style="margin:18px 0 6px"><b>${g[0]}</b></p><div class="tw"><table><thead><tr><th>How to name the file</th><th>Audio text</th></tr></thead><tbody>${g[1].map(f=>`<tr><td>${k(f[0])}</td><td>${f[1]}</td></tr>`).join("")}</tbody></table></div>`).join("")+`<div class="imp"><b>Important:</b> use exactly these file names, including spelling, capital letters and the ${k(".mp3")} extension. The simulator code looks for each audio by its name. With any other name the audio won’t be found and it won’t work (an audio that plays in English means its file is missing or misnamed).</div><p><b>4. Save the files</b> in ${k("Simulador_final_version › Audios › "+(c=="it"?"ITA":"POL"))}. Don’t change the folder or file names.</p></div>`}
+function AUD_STEP(c,a){return{t:"Record the audio files",au:1,h:`<p>The Classroom Simulator needs <b>21 audio files</b>. Record them <b>after</b> the translation is done and proofread, so each audio matches the text the tutor reads in the options.</p><p><b>1. Set up ElevenLabs.</b> Create an account, or use one that already has credits. The scripts are short, so you won’t need many credits.</p><p><b>2. Choose three voices:</b> an adult female voice for the tutor, a boy’s voice (about 12 years old) and a girl’s voice (10–12 years old). Use the right voice for each character every time.</p>`}}
+const longNote=`<p>The files are long: if Claude stops early, write “Continue exactly from the last line” and join the parts, or ask for a downloadable file from the start.</p>`;
+const corr=(where)=>({t:"Apply corrections",h:`<p>Find the file with the text (${where}). Upload <b>your translated file</b>, not the English one. List each text to fix (current wording and new wording, or intended meaning), then send this prompt. Save the corrected file in the same folder, replacing the old one, and reload.</p><ul><li>Correct one file at a time and check the file name before replacing.</li></ul>`,p:[["Prompt: corrections",P.cor],["Prompt: file doesn’t load",P.fix]]});
+
+function plData(c){const C=c.toUpperCase(),a=c=="it"?"ITA":"POL";return{
+intro:`<p>Translate the <b>PL (Parallel Lessons) training</b> and its two simulators. Work with <b>one language at a time</b>. Name every file ${k(c+".js")} in lowercase, and never edit the English ${k("en.js")} files.</p><p>Every prompt already carries three rules: change the language code, use typographic quotes (<b>’ « » „ ”</b>) instead of straight ones, and leave everything that isn’t text unchanged (<b>{braces}</b>, HTML tags, emojis, times, codes, links).</p>`,
+steps:[
+{t:"Translate the main training",h:`<p>Open ${k("Translation_Package › 1_PL_Training")} and upload ${k("en.js")} to Claude with the prompt. Save the result as ${k(c+".js")} in ${k("NEW PL › content")}, replacing any existing file.</p>${longNote}`,p:[["Prompt: main training",P.pl1]]},
+{t:"Translate the Classroom Simulator",h:`<p>Open ${k("2_Classroom_Simulator")} and upload ${k("en.js")} and ${k("First_lesson_classroom_"+C+".txt")}. The .txt file has the official lesson: Claude copies it, it doesn’t translate it again.</p><p>Save ${k(c+".js")} in ${k("Simulador_final_version › content")}.</p><p><b>Audio:</b> you record it later, after proofreading: see Step 5.</p>`,p:[["Prompt: Classroom Simulator",P.pl2]]},
+{t:"Complete the BO Simulator",h:`<p>Open ${k("3_BO_Simulator")} and upload ${k(c+".js")}. It is already translated: only the 8 keys starting with ${k("done")} (under the ${k("TRANSLATE")} comment) are still in English. Save the result in ${k("NEW PL › BO_simulator › content")}, replacing the existing file.</p>`,p:[["Prompt: BO Simulator",P.pl3]]},
+{t:"Proofread",h:`<p><b>Always open the shortcut of your language</b>, never ${k("index.html")}.</p><p><b>Training + BO Simulator:</b> open ${k("NEW PL › "+c+".html")}. Check that everything is translated, natural and clear, and that buttons, quizzes and navigation work. The BO Simulator button opens in your language: proofread it too.</p><p><b>Classroom Simulator:</b> open ${k("Simulador_final_version › "+c+".html")}. Do the guided tour and the decision game. Lesson cards must match the .txt lesson file, and every audio must play in your language and match the text on screen.</p><p><b>Completion codes:</b> Classroom Simulator ${k("PL-SIM-4827")} · BO Simulator ${k("PL-BO-3815")}.</p><p class="warn">The Classroom Simulator button inside the training opens in English. That is expected: Laura will add the new languages later.</p><p>Page in English? Check the file is named exactly ${k(c+".js")} and sits in the right ${k("content")} folder. If both are right, the file has a syntax error.</p>`,p:[["Prompt: file doesn’t load",P.fix]]},
+AUD_STEP(c,a),
+corr(`${k("NEW PL › content")}, ${k("NEW PL › BO_simulator › content")} or ${k("Simulador_final_version › content")}. If you change a ${k("say")} text, record its audio again`)],
+list:[`Training ${c}.js saved in NEW PL › content`,`Classroom Simulator ${c}.js saved in Simulador_final_version › content, lesson cards taken from the .txt file`,`Audio files recorded with exact names, saved in Audios › ${a}`,`BO Simulator ${c}.js with the 8 done texts translated, saved in NEW PL › BO_simulator › content`,`Training and BO Simulator proofread through NEW PL › ${c}.html`,`Classroom Simulator proofread through Simulador_final_version › ${c}.html, every audio checked`,`All three ${c}.js files delivered to Laura, together with the audio files`]}}
+
+function emData(c){const[n,f,txt,img]=EM[c];
+const kind=c=="id"?"E":c=="tr"||c=="pt"?"G":"L";
+const src=c=="pt"?"content-pt.js":(c=="tr"||c=="es")?"content-en.js":"content-pt.js";
+let cls=`<p>Open ${k(f)}. `,pr;
+if(kind=="G"){cls+=`The lesson is already in ${n} inside the file: only the guide texts need translating. Upload ${k("assets › "+src)}.`+(c=="pt"?` Save the result as ${k("content-pt.js")} in ${k(f+" › assets")}, <b>replacing</b> the existing file.`:` Save ${k("content-tr.js")} in ${k(f+" › assets")}.`);pr=[["Prompt: guide texts only",P.emG]]}
+else if(kind=="E"){cls+=`There is no Indonesian lesson yet, so Claude translates it from the Italian one. Upload ${k("assets › content-pt.js")} and ${k(txt)}. Save ${k("content-id.js")} in ${k(f+" › assets")}. <b>Proofread the lesson cards too.</b>`;pr=[["Prompt: Indonesian",P.emI]]}
+else{cls+=`Upload ${k("assets › "+src)} and ${k(txt)}. The lesson file is already translated: Claude copies it, so you don’t proofread the lesson text. Save ${k("content-"+c+".js")} in ${k(f+" › assets")}.`+(img?` Image folder: ${k(img)}.`:"");pr=[["Prompt: lesson from a file",P.emL(!!img).replace(/\[IMAGE FOLDER\]/g,img||"")]]}
+return{
+intro:`<p>Translate the <b>EM (New Educational Model) training</b>: four parts, each with its own ${k("assets")} folder. Unzip <b>New training EM</b> and keep the structure as it is.</p><p>Name every file ${k("content-"+c+".js")} in lowercase, save it in the ${k("assets")} folder of <b>the same part</b>, and never edit the original files (the only exception: the Portuguese translator replaces ${k("content-pt.js")} in Step 3). Work step by step: translate, add, check, next.</p><p>First line of every file: ${k("window.CONTENT = { lang: '"+c+"' };")}${c=="ar"?` (main training only: ${k("{ lang: 'ar', dir: 'rtl' }")})`:""}. Use typographic quotes (<b>’ « » „ ”</b>) inside texts. Platform names stay in English: Kodland, Kodland Sparks, Backoffice, BO, Classroom, AI Buddy.</p>`,
+steps:[
+{t:"Translate the main training",h:`<p>Upload ${k("assets › content-en.js")} (next to ${k("index.html")}) to Claude. Save the result in ${k("New training EM › assets")} as ${k("content-"+c+".js")}. Then open ${k(c+".html")}: the home page should be in ${n}. A red bar means the file couldn’t load.</p>${longNote}`,p:[["Prompt: main training",P.em1]]},
+{t:"Translate the BO simulation",h:`<p>Upload ${k("bo-simulator › assets › content-en.js")}. Save ${k("content-"+c+".js")} in ${k("New training EM › bo-simulator › assets")}.</p>`,p:[["Prompt: BO simulation",P.em2]]},
+{t:"Translate the Classroom guide",h:`<p>The guide texts are translated; the <b>lesson cards</b> come from your country’s lesson file.</p>${cls}</p>`,p:pr},
+{t:"Translate the Kodland Sparks guide",h:`<p>Upload ${k("sparks-guide › assets › content-en.js")}. Save ${k("content-"+c+".js")} in ${k("New training EM › sparks-guide › assets")}.</p>`,p:[["Prompt: Kodland Sparks guide",P.emS]]},
+{t:"Proofread",h:`<p>Open ${k(c+".html")} in the main folder, never ${k("index.html")}.</p><p><b>Unlock every module:</b> click <b>🛠 Developer</b> (or press <b>Shift + D</b> three times), enter ${k("EMDEV")} and click <b>Unlock all modules</b>.</p><p><b>Main training:</b> go through the four modules and the final page. Check translations, tone, clarity, buttons, cards, quizzes, and the feedback of each answer.</p><p><b>Simulations:</b> open them from <b>Module 2</b> (BO simulation, Classroom guide, Kodland Sparks guide) and finish each one, including the final screen and code. In the Classroom guide, check that the lesson cards and pictures are yours${c=="id"?"":"; you don’t need to proofread the lesson text"}.</p>${c=="ar"?`<p class="warn">Arabic: the main training and the Classroom guide read right to left. The BO and Sparks simulations stay left to right.</p>`:""}<p>Red bar? Check the file is named exactly ${k("content-"+c+".js")} and sits in the right ${k("assets")} folder. If both are right, the file has a syntax error.</p>`,p:[["Prompt: file doesn’t load",P.fix]]},
+corr(`${k("assets")}, ${k("bo-simulator › assets")}, ${k(f+" › assets")} or ${k("sparks-guide › assets")}, always ${k("content-"+c+".js")}. If a page shows old text, reload with Ctrl + F5 (Mac: Cmd + Shift + R)`)],
+list:[`Main training content-${c}.js saved in assets`,`BO simulation content-${c}.js saved in bo-simulator › assets`,`Classroom guide content-${c}.js saved in ${f} › assets, lesson cards from your lesson file`,`Kodland Sparks guide content-${c}.js saved in sparks-guide › assets`,`Training proofread through ${c}.html, three simulations opened from Module 2`,`No red bar on any page`,`The four content-${c}.js files delivered to Laura, each named after its folder (Main training, BO, Classroom, Sparks)`]}}
+
+const S={g:"pl",l:{pl:"it",em:"it"},d:{}};
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const fill=(s,n,c)=>T(s).replace(/\[TARGET LANGUAGE\]/g,n).replace(/\[CODE\]/g,c);
+function render(){
+const g=S.g,c=S.l[g],isPl=g=="pl",L=isPl?PL:Object.fromEntries(Object.entries(EM).map(([a,b])=>[a,b[0]]));
+const n=L[c],D=isPl?plData(c):emData(c);
+const dk=x=>S.d[g+c+x];
+let h=`<h2>${isPl?"PL Training":"EM Training"} translation</h2><p class="sub">${isPl?"Parallel Lessons training, Classroom Simulator and BO Simulator.":"New Educational Model training and its three simulations."} Pick your language: every prompt below fills itself in.</p><div class="pick" role="group" aria-label="Target language">`;
+for(const a in L)h+=`<button class="ch${a==c?" on":""}" data-l="${a}">${L[a]}</button>`;
+h+=`</div><div class="card hi bd">${D.intro}</div>`;
+D.steps.forEach((s,i)=>{h+=`<section class="card"><div class="h"><span class="n">${i+1}</span><h3>${s.t}</h3></div><div class="bd">${s.h}</div>`;
+(s.p||[]).forEach((p,j)=>{h+=`<div class="pr"><div class="ph"><span>${p[0]}</span><button class="cp" data-i="${i}-${j}">Copy</button></div><pre>${esc(fill(p[1],n,c))}</pre></div>`});if(s.au)h+=audioTable();h+="</section>"});
+const tot=D.list.length,done=D.list.filter((_,i)=>dk(i)).length;
+h+=`<section class="card"><h3>Final checklist</h3><div class="bar"><i style="width:${done/tot*100}%"></i></div><ul class="cl">${D.list.map((x,i)=>`<li class="ck${dk(i)?" d":""}" tabindex="0" role="checkbox" aria-checked="${!!dk(i)}" data-c="${i}"><s>${dk(i)?"✓":""}</s><span>${x}</span></li>`).join("")}</ul></section>`;
+$("#guide").innerHTML=h;
+$("#bpl").classList.toggle("on",isPl);$("#bem").classList.toggle("on",!isPl);
+S.D=D;S.n=n;S.c=c}
+const $=s=>document.querySelector(s);
+function go(g){S.g=g;render();$("#guide").scrollIntoView()}
+$("#bpl").onclick=()=>go("pl");$("#bem").onclick=()=>go("em");
+$("#guide").addEventListener("click",e=>{
+const t=e.target.closest("button,li");if(!t)return;
+if(t.dataset.l){S.l[S.g]=t.dataset.l;const y=scrollY;render();scrollTo(0,y)}
+else if(t.dataset.i){const[i,j]=t.dataset.i.split("-");const txt=fill(S.D.steps[i].p[j][1],S.n,S.c);
+const ok=()=>{t.textContent="Copied";t.classList.add("ok");setTimeout(()=>{t.textContent="Copy";t.classList.remove("ok")},1600)};
+const fb=()=>{const a=document.createElement("textarea");a.value=txt;document.body.appendChild(a);a.select();try{document.execCommand("copy");ok()}catch(_){}a.remove()};
+navigator.clipboard?navigator.clipboard.writeText(txt).then(ok,fb):fb()}
+else if(t.dataset.a){const key=S.g+S.c+"a"+t.dataset.a;S.d[key]=!S.d[key];const y=scrollY;render();scrollTo(0,y)}
+else if(t.dataset.c!==undefined){const key=S.g+S.c+t.dataset.c;S.d[key]=!S.d[key];const y=scrollY;render();scrollTo(0,y)}});
+$("#guide").addEventListener("keydown",e=>{if((e.key==" "||e.key=="Enter")&&(e.target.dataset.c!==undefined||e.target.dataset.a!==undefined)){e.preventDefault();e.target.click()}});
+render();
+</script></body></html>
